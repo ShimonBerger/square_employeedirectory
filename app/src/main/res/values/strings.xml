@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Employee Directory</string>
+
+    <string name="employee_list_empty">Sorry, we couldn\'t find any employees. Please try again later.</string>
+    <string name="employee_list_error">Sorry, there was an issue retrieving employee data. Please try again.</string>
+    <string name="employee_clicked">Employee Clicked: %s</string>
+</resources>

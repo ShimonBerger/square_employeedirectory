@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="employee"
+            type="com.sberger.square_employeedirectory.data.network.model.Employee" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:padding="@dimen/pad_small">
+
+        <ImageView
+            android:id="@+id/employee_image"
+            android:layout_width="@dimen/thumbnail"
+            android:layout_height="@dimen/thumbnail"
+            app:imageUrl="@{employee.photoUrlSmall}"
+            tools:src="@drawable/outline_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/employee_name_text"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pad_small"
+            android:text="@{employee.fullName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/employee_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Employee Name" />
+
+        <TextView
+            android:id="@+id/employee_team_text"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{employee.team}"
+            android:layout_marginTop="@dimen/pad_xsmall"
+            app:layout_constraintStart_toStartOf="@id/employee_name_text"
+            app:layout_constraintEnd_toEndOf="@id/employee_name_text"
+            app:layout_constraintTop_toBottomOf="@id/employee_name_text"
+            tools:text="Employee Team Name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
